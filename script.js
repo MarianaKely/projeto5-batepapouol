@@ -73,4 +73,36 @@ function chatpassthrough() {
 
 /*load messages from server - end*/
 
+/* coordinate sending messages - init*/
 
+
+let othermemberid = "Todos";
+let privateconversation = false;
+
+function tosendmessage(member, particular) {
+  const chatmessage = document.querySelector(".textcamp input");
+  const newmessage = chatmessage.value;
+  if (newmessage && newmessage.length > 0) {
+    const themessage = {
+      from: userid,
+      to: member,
+      text: newmessage,
+      type: particular ? "private_message" : "message",
+    };
+    axios.post(apimessage, themessage).then(function () {
+        chatmessage.value = "";
+        chatpassthrough();
+      })
+      .catch(function (error) {
+        alert("Erro ao enviar a mensagem. Tente novamente mais tarde");
+        window.location.reload();
+      });
+  }
+}
+
+function tosend() {
+  tosendmessage(othermemberid, privateconversation);
+}
+
+
+/* coordinate sending messages - end*/
