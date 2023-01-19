@@ -16,21 +16,22 @@
     <title>Bate Papo Uol</title>
   </head>
   <body>
+    <div  class="transparency outscreen" onclick="layoutoffscreen()" ></div>
 
 <!-- box that holds all the code - init -->    
 
     <div class="container">
-
+    
 <!-- message exchange tab - init -->
 
       <div class="top">
-        <img src="./img/logo.png"  />
-        <ion-icon name="people" ></ion-icon>
+        <img src="./img/logo.png"/>
+        <div><ion-icon name="people" onclick="layoutonscreen()" data-test="open-participants" ></ion-icon></div>
       </div>
       <div class="conversation"></div>
       <div class="textcamp">
-        <input placeholder="Escreva aqui..." />
-        <div class="tosend">
+        <input data-test="input-message" placeholder="Escreva aqui..." />
+        <div class="tosend" onclick="tosend()" data-test="send-message">
           <ion-icon name="paper-plane-outline"></ion-icon>
         </div>
       </div>
@@ -39,7 +40,7 @@
 
 <!-- shipping options tab - init -->
 
-<div class="right outscreen">
+<div class="right outscreen" data-test="overlay">
     <div class="toptab">
       Escolha um contato <br/>para enviar mensagem:
     </div>
@@ -48,18 +49,18 @@
       Escolha a visibilidade
     </div>
     <ul class="shownames">
-      <li  id="li-public">
+      <li  id="li-public" onclick="openmessage()" data-test="public">
         <span>
           <ion-icon name="lock-open"></ion-icon
           ><span class="category">Público</span
-          ><ion-icon class="confirm" name="checkmark-circle"></ion-icon>
+          ><ion-icon class="confirm" name="checkmark-circle" data-test="check"></ion-icon>
         </span>
       </li>
-      <li id="li-reserved">
+      <li id="li-reserved" onclick="privatemessage()" data-test="private">
         <span>
           <ion-icon name="lock-closed"></ion-icon
           ><span class="category">Reservadamente</span
-          ><ion-icon class="check" name="checkmark-circle" ></ion-icon>
+          ><ion-icon class="check" name="checkmark-circle" data-test="check"></ion-icon>
         </span>
       </li>
     </ul>
@@ -69,9 +70,11 @@
 
 <!-- tab shows who's available and who's not - init -->
 
-      <div id="showavailability">Enviando para: Todos (Público)</div>
+      <div id="showavailability" data-test="recipient">Enviando para: Todos (Público)</div>
 
 <!-- tab shows who's available and who's not - end -->      
+
+    </div>
 
 <!-- box that holds all the code - end -->
     

@@ -25,6 +25,7 @@
   .top img {
     width: 75px;
     height: 53px;
+    cursor: pointer;
   }
   
   .top ion-icon {
@@ -151,7 +152,7 @@
     display: flex;
     justify-content: space-between;
   }
-  
+
   .shownames li ion-icon {
     width: 15%;
   }
