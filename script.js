@@ -104,5 +104,19 @@ function tosend() {
   tosendmessage(othermemberid, privateconversation);
 }
 
-
 /* coordinate sending messages - end*/
+
+/*coordinate sending messages with enter - init*/
+
+const chatmessage = document.querySelector(".textcamp input");
+chatmessage.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    tosend();
+  }
+});
+
+/*coordinate sending messages with enter - end*/
+ 
+
+
+
