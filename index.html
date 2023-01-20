@@ -16,7 +16,6 @@
     <title>Bate Papo Uol</title>
   </head>
   <body>
-    <div  class="transparency outscreen" onclick="layoutoffscreen()" ></div>
 
 <!-- box that holds all the code - init -->    
 
@@ -26,7 +25,7 @@
 
       <div class="top">
         <img src="./img/logo.png"/>
-        <div><ion-icon name="people" onclick="layoutonscreen()" data-test="open-participants" ></ion-icon></div>
+        <div><ion-icon name="people"  data-test="open-participants" ></ion-icon></div>
       </div>
       <div class="conversation"></div>
       <div class="textcamp">
@@ -37,42 +36,6 @@
       </div>
 
 <!-- message exchange tab - end -->    
-
-<!-- shipping options tab - init -->
-
-<div class="right outscreen" data-test="overlay">
-    <div class="toptab">
-      Escolha um contato <br/>para enviar mensagem:
-    </div>
-    <div><ul class="names"></ul></div>
-    <div class="toptab showtoptab">
-      Escolha a visibilidade
-    </div>
-    <ul class="shownames">
-      <li  id="li-public" onclick="openmessage()" data-test="public">
-        <span>
-          <ion-icon name="lock-open"></ion-icon
-          ><span class="category">Público</span
-          ><ion-icon class="confirm" name="checkmark-circle" data-test="check"></ion-icon>
-        </span>
-      </li>
-      <li id="li-reserved" onclick="privatemessage()" data-test="private">
-        <span>
-          <ion-icon name="lock-closed"></ion-icon
-          ><span class="category">Reservadamente</span
-          ><ion-icon class="check" name="checkmark-circle" data-test="check"></ion-icon>
-        </span>
-      </li>
-    </ul>
-  </div>
-
-<!-- shipping options tab - end --> 
-
-<!-- tab shows who's available and who's not - init -->
-
-      <div id="showavailability" data-test="recipient">Enviando para: Todos (Público)</div>
-
-<!-- tab shows who's available and who's not - end -->      
 
     </div>
 
